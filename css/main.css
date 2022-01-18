@@ -1,0 +1,293 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*------------ Primary  */
+    --Gradient: linear-gradient(to right, hsl(6, 100%, 80%)20% ,hsl(335, 100%, 65%)80%);
+    /* -------Neutral------- */
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+ul{
+    list-style-type: none;
+}
+body{
+    
+    background: url(../images/bg-desktop.png) ,var(--Very-Dark-Blue);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 100vw 52vh;
+    min-width: 100%;
+    min-height: 100vh;
+    font-size: 0.875rem;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:var(--ale-Blue);
+    padding: 2rem;
+}
+main{
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;  
+}
+/* Hide the element visually but still accessible by the screen reader */
+.sr-only {
+    position: absolute !important;
+    margin: -1px !important;
+    -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+/* Both component share these styling */
+main .box {
+    -webkit-box-shadow: 0.625rem 1.188rem 2.313rem 0.188rem rgb(12 18 44 / 80%);
+        -moz-box-shadow: 0.625rem 1.188rem 2.313rem 0.188rem rgb(12 18 44 / 80%);
+            box-shadow: 0.625rem 1.188rem 2.313rem 0.188rem rgb(12 18 44 / 80%);
+    margin-bottom: 1rem;
+}
+/* Start styling the logo component*/
+.logo__component {
+    min-width: 21.875rem;
+    border-radius: 0.625rem 5.625rem 0.625rem 0.625rem ;
+    background-color:var(--Dark-Blue);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2.4rem  2rem; 
+}
+.logo__component .logo {
+    width: 100%;
+    padding-bottom: 2rem;
+}
+.logo__component .logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* start styling the logo component icons */
+.logo__component ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.logo__component  .icons li {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    z-index: 2;
+    position: relative;
+}
+/* the logo component icons hover effect  */
+.logo__component  .icons li::before{
+    content: '';
+    position: absolute;
+    top: -0.1rem;
+    left:-0.1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    transform: scale(0);
+    background-color: rgb(12 18 44 / 30%);
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: transform .4s ease;
+}
+.logo__component  .icons li:hover::before{
+    transform: scale(1.1);
+}
+/* Start styling the downloader__component */
+.downloader__component{
+    background-color: var(--Dark-Blue);
+    color: #fff;
+    margin-left: 1.5rem;
+    padding: 2.3rem 2rem 3.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 33.75rem;
+    font-weight: 400;
+}
+.downloader__description{
+    font-size: 14px;
+    color: rgba(221, 219, 255, 0.7);
+}
+.description__number{
+    font-weight: 700;
+    opacity: .9;
+    color: #fff;
+}
+/* Start styling the downloader  */
+.downloader{
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    height: 1rem;
+    width: 100%;
+    background: var(--Very-Dark-Blue);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border: 0.125rem solid var(--Very-Dark-Blue);
+    position: relative;
+    overflow: hidden;
+}
+.downloader::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: var(--Gradient);
+    border-radius: 0.5rem;
+}
+/* White ball at the end of the downloader */
+.downloader::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(80% - 0.7rem);
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #fff;
+    border-radius: 50%;
+}
+/* Start styling the min and max values */
+.downloader__values{
+    position: relative;
+}
+.downloader__values .downloader__min, 
+.downloader__values .downloader__max{
+    position:absolute;
+    bottom: -0.3rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.9;
+    z-index: 9;
+}
+.downloader__values .downloader__max abbr,
+.downloader__values .downloader__min abbr{
+    font-size: 0.6rem;
+}
+.downloader__values .downloader__min{
+    left: 0;
+}
+.downloader__values .downloader__max{
+    right: 0;
+}
+/* Start styling left-GB  */
+.downloader__values .downloader__left{
+    position: absolute;
+    z-index: 4;
+    top:-8.5rem;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 0.5rem 0.5rem 0 ;
+    padding: 0.5rem 1rem;
+    min-width: 150px;
+}
+.downloader__values .downloader__left::before{
+    content: '';
+    position: absolute;
+    bottom: -1.25rem;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-color: #fff #fff transparent transparent ;
+    border-style: solid;
+}
+.downloader__values .downloader__left abbr{
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: var(--Grayish-Blue);
+    white-space: nowrap;   
+}
+/* Start styling the attribution  */
+.attribution { 
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.813rem; 
+    text-align: center; 
+    color: var(--Pale-Blue); 
+}
+.attribution a { 
+    color: hsl(335, 100%, 65%);
+    transition: color .4s ease;
+}
+.attribution a:hover{
+    color: hsl(170deg 59% 57%);
+    text-decoration: none;
+}
+.attribution a:focus-visible {
+    outline: 0.125rem solid var(--Pale-Blue);
+    text-decoration: none;
+} 
+/* Media query for screens less than 60.625rem */
+@media screen and (max-width:60.625rem){
+    main{
+        width: 100%;
+    }
+    .logo__component,
+    .downloader__component {
+        min-width: 20.438rem;
+        max-width: 33.75rem;
+    }
+}
+/* Media query for screens less than 48.75rem */
+@media screen and (max-width: 48.75rem){
+    body{
+        background-image: url(../images/bg-mobile.png);
+        background-position: top left;
+        background-size: cover ;
+    }
+    main{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .logo__component{
+        width:100%;
+    }
+    .downloader__component{
+        margin-left: 0;
+    }
+    .downloader__values .downloader__left{
+        position: absolute;
+        top: unset;
+        bottom:-5.6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0.5rem;
+        font-size: 2rem;
+        line-height: 2rem;
+        padding: 1rem 1.9rem;
+    }
+    .downloader__values .downloader__left::before{
+        display: none;
+    }
+}
