@@ -290,4 +290,7 @@ main .box {
     .downloader__values .downloader__left::before{
         display: none;
     }
+    .attribution {
+         display: none;
+    }
 }
