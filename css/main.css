@@ -142,32 +142,33 @@ main .box {
     height: 1rem;
     width: 100%;
     background: var(--Very-Dark-Blue);
-    background-size: 80%;
+    background-size:80%;
     background-repeat: no-repeat;
     border: 0.125rem solid var(--Very-Dark-Blue);
     position: relative;
     overflow: hidden;
 }
-.downloader::before{
+/* the downloader background */
+.downlaoder__background{
     content: '';
     position: absolute;
     top:0;
     left: 0;
-    width: 80%;
     height: 100%;
     background: var(--Gradient);
     border-radius: 0.5rem;
+    transition : width 1.85s linear
 }
 /* White ball at the end of the downloader */
-.downloader::after{
+.ball{
     content: '';
     position: absolute;
     top: 0;
-    left: calc(80% - 0.7rem);
     width: 0.7rem;
     height: 0.7rem;
     background: #fff;
     border-radius: 50%;
+    transition : left 1.85s linear
 }
 /* Start styling the min and max values */
 .downloader__values{
@@ -289,8 +290,5 @@ main .box {
     }
     .downloader__values .downloader__left::before{
         display: none;
-    }
-    .attribution {
-         display: none;
     }
 }
