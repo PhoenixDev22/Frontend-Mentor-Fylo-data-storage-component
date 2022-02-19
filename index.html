@@ -26,20 +26,22 @@
         <img src="images/logo.svg" alt="Fylo logo">
       </div>
       <ul class="icons">
-        <li><img src="images/icon-document.svg" alt="document"></li>
-        <li><img src="images/icon-folder.svg" alt="folder"></li>
-        <li><img src="images/icon-upload.svg" alt="upload"></li>
+        <li><img src="images/icon-document.svg" alt="" aria-hidden="true"></li>
+        <li><img src="images/icon-folder.svg" alt="" aria-hidden="true"></li>
+        <li><img src="images/icon-upload.svg" alt="" aria-hidden="true"></li>
       </ul>
     </div>
     <!-- Downloader component -->
     <div class=" box downloader__component">
       <p class="downloader__description">You’ve used <span class="description__number">815 <abbr>GB </abbr></span>of your storage</p>
-      <div class="downloader">
+      <div class="downloader" >
+        <span style="width: 0" class="downlaoder__background"data-width="80%"></span>
+        <span  style="left: -0.7rem" class="ball" data-position = " calc(80% - 0.7rem)"></span>
       </div>
       <div class="downloader__values">
         <p class="downloader__min"> 0 <abbr>GB </abbr></p>
         <p class="downloader__max"> 1000 <abbr>GB </abbr></p>
-        <p class="downloader__left"> 185<abbr>GB Left</abbr></p> 
+        <p class="downloader__left" data-number = "185"><span id="goal">0</span> <abbr>GB Left</abbr></p> 
       </div>
     </div>
   </main>
@@ -47,5 +49,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://www.frontendmentor.io/profile/PhoenixDev22" rel="noopener" target="_blank">PhoenixDev22</a>.
   </footer>
+  <script src="main.js"></script>
 </body>
 </html>
